@@ -1,6 +1,7 @@
 'use strict';
 const electron = require('electron');
 const app = electron.app;
+const windowStateKeeper = require('electron-window-state');
 
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')();
@@ -15,10 +16,22 @@ function onClosed() {
 }
 
 function createMainWindow() {
-	const win = new electron.BrowserWindow({
-		width: 600,
-		height: 400
+	const mainWindowState = windowStateKeeper({
+		defaultWidth: 1200,
+		defaultHeight: 800
 	});
+
+	let win = new electron.BrowserWindow({
+		'x': mainWindowState.x,
+		'y': mainWindowState.y,
+		'width': mainWindowState.width,
+		'height': mainWindowState.height
+	});
+
+	// Let us register listeners on the window, so we can update the state
+	// automatically (the listeners will be removed when the window is closed)
+	// and restore the maximized or full screen state
+	mainWindowState.manage(win);
 
 	win.loadURL(`file://${__dirname}/index.html`);
 	win.on('closed', onClosed);
