@@ -1,26 +1,18 @@
 "use strict";
 
-const FeedParser = require('feedparser');
-const request = require('request');
+var feed = require("feed-read");
+var http = require("http");
 
-//Undefined Variable
-let req = request(url);
-let feedPaser = new FeedParser([options]);
+function parseRss(url) {
+    return feed("", function(err, articles) {
+        return articles;
+    });
 
-req.on('reponse', () => {
-    let stream = this;
+}
 
-    if (res.statusCode != 200) {
-        return this.emit('error', new Error('Bad status code'));
-    }
- });
+let url = "http://craphound.com/?feed=rss2";
+let feeds = parseRss(url);
 
- req.on('readable', () => {
-     let stream = this;
-     let meta = this.meta;
-     let item = this; //?
-
-     while(item = stream.read()) {
-         console.log(item);
-     }
- })
+for (let item in feeds) {
+    console.log(item.title);
+}
