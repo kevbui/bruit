@@ -2,6 +2,9 @@
 const electron = require('electron');
 const app = electron.app;
 const windowStateKeeper = require('electron-window-state');
+const storage = require('electron-json-storage');
+
+const rss = require('./rss.js');
 
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')();
@@ -22,10 +25,10 @@ function createMainWindow() {
 	});
 
 	let win = new electron.BrowserWindow({
-		'x': mainWindowState.x,
-		'y': mainWindowState.y,
-		'width': mainWindowState.width,
-		'height': mainWindowState.height
+		x: mainWindowState.x,
+		y: mainWindowState.y,
+		width: mainWindowState.width,
+		height: mainWindowState.height
 	});
 
 	// Let us register listeners on the window, so we can update the state
@@ -53,4 +56,5 @@ app.on('activate', () => {
 
 app.on('ready', () => {
 	mainWindow = createMainWindow();
+
 });
