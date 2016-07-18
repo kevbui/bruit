@@ -28,7 +28,7 @@ function createMainWindow() {
 		x: mainWindowState.x,
 		y: mainWindowState.y,
 		width: mainWindowState.width,
-		height: mainWindowState.height
+		height: mainWindowState.height,
 	});
 
 	// Let us register listeners on the window, so we can update the state
@@ -36,6 +36,7 @@ function createMainWindow() {
 	// and restore the maximized or full screen state
 	mainWindowState.manage(win);
 
+	win.setMenu(null);	
 	win.loadURL(`file://${__dirname}/index.html`);
 	win.on('closed', onClosed);
 
