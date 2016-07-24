@@ -40,10 +40,12 @@ header h1 {
 
 #feeds {
 	width: 250px;
-	top: 0;
-	right:0;
-	bottom: 0;
+	overflow: hidden;
 	background-color: yellow;
+}
+
+#feeds:hover {
+	overflow-y: scroll;
 }
 
 #preview {
