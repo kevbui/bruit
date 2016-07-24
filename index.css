@@ -2,6 +2,7 @@ html,
 body {
 	padding: 0;
 	margin: 0;
+	height: 100%;
 }
 
 body {
@@ -26,11 +27,26 @@ header h1 {
 	padding: 0;
 }
 
-.sidebar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
+.container {
+	height: 100%;
+	display: flex;
+	display: -webkit-flex;
+}
+
+#sidebar {
     width: 150px;
     background-color:rgb(38, 50, 56);
+}
+
+#feeds {
+	width: 250px;
+	top: 0;
+	right:0;
+	bottom: 0;
+	background-color: yellow;
+}
+
+#preview {
+	flex: 1;
+	background-color: green;
 }
