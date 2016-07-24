@@ -9,34 +9,18 @@
 </head>
 
 <body>
-<div class="container">
-	<div id="sidebar">
-		<p>Hi</p>
-	</div>
-	<div id="feeds">
-		<p>World</p>
-		<script>
-				var url = 'http://daringfireball.net/feeds/articles'
-				feednami.load(url,function(result){
-					if(result.error){
-					console.log(result.error)
-					}
-					else{
-					var entries = result.feed.entries
-					for(var i = 0; i < entries.length; i++){
-
-
-					}}
-				})
-				</script>
+	<div class="container">
+		<div id="sidebar">
+			<h1>Categories</h1>
+		</div>
+		<div id="feeds">
+			<div class="feed"></div>
 		</div>
 
-		<div id="preview">
-			<p>!</p>
-		</div>
+		<div id="preview"></div>
 		<section class="main"></section>
 		<footer></footer>
 	</div>
 </body>
-
+<script src="rss.js"></script>
 </html>
