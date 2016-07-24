@@ -1,20 +1,42 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Bruit</title>
-		<link rel="stylesheet" href="index.css">
-	</head>
-	<body>
-        <div class="sidebar">
-        </div>
 
-		<div class="container">
-			<header>
-				<h1>Electron boilerplate</h1>
-			</header>
-			<section class="main"></section>
-			<footer></footer>
+<head>
+	<meta charset="utf-8">
+	<title>Bruit</title>
+	<link rel="stylesheet" href="index.css">
+	<script src="https://cdn.rawgit.com/sekando/feednami-client/master/releases/1.0.2.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+	<div id="sidebar">
+		<p>Hi</p>
+	</div>
+	<div id="feeds">
+		<p>World</p>
+		<script>
+				var url = 'http://daringfireball.net/feeds/articles'
+				feednami.load(url,function(result){
+					if(result.error){
+					console.log(result.error)
+					}
+					else{
+					var entries = result.feed.entries
+					for(var i = 0; i < entries.length; i++){
+
+
+					}}
+				})
+				</script>
 		</div>
-	</body>
+
+		<div id="preview">
+			<p>!</p>
+		</div>
+		<section class="main"></section>
+		<footer></footer>
+	</div>
+</body>
+
 </html>
