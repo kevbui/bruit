@@ -36,6 +36,18 @@ function createMainWindow() {
 	// and restore the maximized or full screen state
 	mainWindowState.manage(win);
 
+    storage.has('savedFeeds', function(error, hasKey) {
+        if(error) {
+            storage.set('savedFeeds', {savedFeeds: [] }, writeFeeds);
+        }
+
+        if(hasKey) {
+            storage.get('savedFeeds', function(error, data) {
+                let urls = data;
+            })
+        } 
+    })
+
 	win.setMenu(null);	
 	win.loadURL(`file://${__dirname}/index.html`);
 	win.on('closed', onClosed);
@@ -57,5 +69,4 @@ app.on('activate', () => {
 
 app.on('ready', () => {
 	mainWindow = createMainWindow();
-
 });
