@@ -1,6 +1,6 @@
 {
   "name": "Bruit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A rss reader",
   "license": "MIT",
   "repository": {
@@ -27,6 +27,7 @@
   ],
   "dependencies": {
     "electron-debug": "^1.0.0",
+    "electron-json-storage": "^2.0.0",
     "electron-window-state": "^3.0.3",
     "feed-read": "0.0.1",
     "feedly": "^0.1.6"
