@@ -1,17 +1,12 @@
 # Bruit
 
-> My superb app
+> A crossplatform RSS reader, build using only HTML/Javascript
 
 
 ## Dev
 
 ```
 $ npm install
-```
-
-### Run
-
-```
 $ npm start
 ```
 
