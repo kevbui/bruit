@@ -3,8 +3,6 @@ const app = electron.app;
 const windowStateKeeper = require('electron-window-state');
 const storage = require('electron-json-storage');
 
-const rss = require('./rss.js');
-
 // adds debug features like hotkeys for triggering dev tools and reload
 require('electron-debug')();
 
@@ -13,7 +11,6 @@ let mainWindow;
 
 function onClosed() {
   // dereference the window
-  // for multiple windows store them in an array
   mainWindow = null;
 }
 
@@ -28,7 +25,6 @@ function createMainWindow() {
     y: mainWindowState.y,
     width: mainWindowState.width,
     height: mainWindowState.height,
-    nodeIntegration: false,
   });
 
   // Let us register listeners on the window, so we can update the state
@@ -36,22 +32,21 @@ function createMainWindow() {
   // and restore the maximized or full screen state
   mainWindowState.manage(win);
 
-    storage.has('savedFeeds', function(error, hasKey) {
-        if(error) {
-            storage.set('savedFeeds', {savedFeeds: [] }, writeFeeds);
-        }
+  storage.has('savedFeeds', function (error, hasKey) {
+    if (error) {
+      storage.set('savedFeeds', { savedFeeds: [] }, writeFeeds);
+    }
 
-        if(hasKey) {
-            storage.get('savedFeeds', function(error, data) {
-                let urls = data;
-            })
-        } 
-    })
+    if (hasKey) {
+      storage.get('savedFeeds', function (error, data) {
+        let urls = data;
+      })
+    }
+  })
 
-    storage.
-	win.setMenu(null);	
-	win.loadURL(`file://${__dirname}/index.html`);
-	win.on('closed', onClosed);
+  win.setMenu(null);
+  win.loadURL(`file://${__dirname}/index.html`);
+  win.on('closed', onClosed);
 
   return win;
 }
@@ -69,5 +64,5 @@ app.on('activate', () => {
 });
 
 app.on('ready', () => {
-	mainWindow = createMainWindow();
+  mainWindow = createMainWindow();
 });
