@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="index.css">
 	<script src="https://cdn.rawgit.com/sekando/feednami-client/master/releases/1.0.2.min.js"></script>
 	<script src="feed.js"></script>
+	<script src="preview.js"></script>
 </head>
 
 <body>
@@ -18,13 +19,13 @@
 			<div class="feed" onclick="previewInMainPanel(this)"></div>
 		</div>
 
-		<div id="preview"></div>
+		<webview id="preview" src="about:blank" useragent="Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1A543a Safari/419.3"></webview>
 		<section class="main"></section>
 		<footer></footer>
 	</div>
 	
 	<script>
-		let url = 'http://daringfireball.net/feeds/articles';
+		let url = 'http://www.anandtech.com/rss/';
 
 		feednami.load(url, (result) => {
 			if (result.error) {
