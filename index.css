@@ -21,7 +21,7 @@ header {
 }
 
 header h1 {
-	font-size: 60px;
+	font-size: 50px;
 	font-weight: 100;
 	margin: 0;
 	padding: 0;
@@ -47,6 +47,15 @@ header h1 {
 #feeds:hover {
 	overflow-y: scroll;
 }
+
+#feed-active{
+	color: coral;
+}
+
+.feed {
+	
+}
+
 
 #preview {
 	flex: 1;
