@@ -42,6 +42,7 @@ header h1 {
 #sidebar {
     width: 150px;
     background-color:rgb(38, 50, 56);
+	color: white;
 }
 
 #feeds {
