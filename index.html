@@ -5,19 +5,20 @@
 	<meta charset="utf-8">
 	<title>Bruit</title>
 	<link rel="stylesheet" href="index.css">
-	<script src="https://cdn.rawgit.com/sekando/feednami-client/master/releases/1.0.2.min.js"></script>
+	<script src="feednami.js"></script>
 	<script src="feed.js"></script>
 	<script src="preview.js"></script>
+	<script src="sidebar.js"></script>
+
 </head>
 
 <body>
 	<div class="menu"></div>
 	<div class="container">
 		<div id="sidebar">
-			<h1>Categories</h1>
+			<div class="sidebar-feed"></div>
 		</div>
 		<div id="feeds">
-			<div class="feed" onclick="previewInMainPanel(this)"></div>
 			<div class="feed"></div>
 		</div>
 
