@@ -26,10 +26,12 @@
 		<section class="main"></section>
 		<footer></footer>
 	</div>
-	
+		
 	<script>
 		let url = 'http://www.anandtech.com/rss/';
 
+		loadSidebar(links);
+		sortSidebar();
 		feednami.load(url, (result) => {
 			if (result.error) {
 				console.log(result.error);
