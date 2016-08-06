@@ -18,6 +18,7 @@
 		</div>
 		<div id="feeds">
 			<div class="feed" onclick="previewInMainPanel(this)"></div>
+			<div class="feed"></div>
 		</div>
 
 		<webview id="preview" src="about:blank" useragent="Mozilla/5.0 (Linux; Android 6.0.1; LG-D801 Build/MOB30R) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.91 Mobile Safari/537.36"></webview>
@@ -37,7 +38,7 @@
 				let feeds = document.getElementById('feeds');
 				for (let i = 0; i < entries.length; i++) {
 					let entry = entries[i];
-					let div = document.createElement('feed');
+					let div = document.createElement('div');
 					div.className = 'feed';
 					div.onclick = previewInMainPanel;
 					div.setAttribute("link", entries[i].link);
