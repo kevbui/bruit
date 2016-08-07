@@ -33,8 +33,9 @@ function createMainWindow() {
   mainWindowState.manage(win);
 
   storage.has('savedFeeds', function (error, hasKey) {
+    //Returns a error because key doesn't exist, so create it'
     if (error) {
-      storage.set('savedFeeds', { savedFeeds: [] }, writeFeeds);
+      throw error;
     }
 
     if (hasKey) {
