@@ -43,8 +43,9 @@ function submitAddDialog() {
       div.className = 'sidebar-feed';
       div.innerText = result.feed.meta.title;
       div.onclick = loadFeed;
-      div.setAttribute("link", result.feed.meta.xmlurl);
+      div.setAttribute("link", data);
       parent.appendChild(div);
+      document.getElementById('feed-input').value = '';
     }
   })
 }
