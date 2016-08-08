@@ -4,6 +4,26 @@
 	padding: 0px;
     margin: 0px;  
 	font-family: sans-serif;
+	display: inline-flex;
+	width: 100%;
+}
+
+#title-bar button {
+	float: left;
+	-webkit-app-region: no-drag; 
+}
+
+#add-dialog {
+	display: inline-flex;
+    position: relative;
+    width: 200px;
+	
+}
+
+#add-dialog input {
+    width: 194px;
+	-webkit-app-region: no-drag; 
+	float: left;
 }
 
 #title-bar-btns {
