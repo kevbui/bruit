@@ -33,19 +33,6 @@ function createMainWindow() {
   // and restore the maximized or full screen state
   mainWindowState.manage(win);
 
-  storage.has('savedFeeds', function (error, hasKey) {
-    //Returns a error because key doesn't exist, so create it'
-    if (error) {
-      throw error;
-    }
-
-    if (hasKey) {
-      storage.get('savedFeeds', function (error, data) {
-        let urls = data;
-      })
-    }
-  })
-
   win.setMenu(null);
   win.loadURL(`file://${__dirname}/index.html`);
   win.on('closed', onClosed);

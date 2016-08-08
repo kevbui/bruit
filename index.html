@@ -21,7 +21,8 @@
 			<button class="clean-gray" onclick="addNewFeed()">Add Feed</button>
 
 			<div id="add-dialog">
-				<input id="feed-input" type="url"><input type="submit" onclick="submitAddDialog()">
+				<input id="feed-input" type="url">
+				<input type="submit" onclick="submitAddDialog()">
 			</div>
 
 			<div id="title-bar-btns">
@@ -45,11 +46,7 @@
 
 	<script src="js/titlebar.js"></script>
 	<script>
-		let url = 'http://www.anandtech.com/rss/';
-
-		loadSidebar(links);
-		sortSidebar();
-		feednami.load(url, (result) => {
+		feednami.load(links[0], (result) => {
 			if (result.error) {
 				console.log(result.error);
 			} 

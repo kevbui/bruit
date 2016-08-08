@@ -1,3 +1,5 @@
+var links = [];
+
 function previewInMainPanel() {
     let div = document.getElementById('feed-active');
     let preview = document.getElementById('preview');

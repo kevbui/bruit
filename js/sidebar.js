@@ -1,8 +1,3 @@
-let links = [
-    'http://www.anandtech.com/rss/',
-    'http://daringfireball.net/feeds/articles'
-]
-
 function loadSidebar(urls) {
     let sidebar = document.getElementById('sidebar');
     for (var index = 0; index < urls.length; index++) {
@@ -11,7 +6,7 @@ function loadSidebar(urls) {
                 console.log(result.error);
             }
             else {
-                let div = document.createElement('div');
+                let div = document.createElement('ul');
                 div.className = 'sidebar-feed';
                 div.innerText = result.feed.meta.title;
                 div.onclick = loadFeed;
@@ -41,11 +36,14 @@ function sortSidebar() {
     });
 }
 
-function addNewFeed() {
-    console.log("Hi");
-}
+(function () {
+  const storage = require('electron-json-storage');
 
-function refreshFeed() {
-    console.log("RAWR");
-}
-
+  storage.get('savedFeeds', function(error, data) {
+      if(error) throw error;
+      for (var i = 0; i < data.length; i++) {
+          links.push(data[i]);
+      }
+      loadSidebar(links);
+  })
+})();
