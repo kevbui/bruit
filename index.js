@@ -25,6 +25,7 @@ function createMainWindow() {
     y: mainWindowState.y,
     width: mainWindowState.width,
     height: mainWindowState.height,
+    frame: false,
   });
 
   // Let us register listeners on the window, so we can update the state
