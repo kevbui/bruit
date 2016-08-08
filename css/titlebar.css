@@ -3,21 +3,7 @@
 	height: 32px;	
 	padding: 0px;
     margin: 0px;  
-	color: #ADADAD;
 	font-family: sans-serif;
-}
-
-#title {
-	position: fixed;
-	top: 0px;
-	left: 12px;	
-	line-height: 32px;
-	font-size: 14px;
-    display: none
-}
-
-#title a {
-  color: #68217A;
 }
 
 #title-bar-btns {
