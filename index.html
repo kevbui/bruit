@@ -5,10 +5,12 @@
 	<meta charset="utf-8">
 	<title>Bruit</title>
 	<link rel="stylesheet" href="index.css">
-	<script src="feednami.js"></script>
-	<script src="feed.js"></script>
-	<script src="preview.js"></script>
-	<script src="sidebar.js"></script>
+	<link rel="stylesheet" href="css/titlebar.css">
+
+	<script src="js/feednami.js"></script>
+	<script src="js/feed.js"></script>
+	<script src="js/preview.js"></script>
+	<script src="js/sidebar.js"></script>
 
 </head>
 
@@ -39,7 +41,7 @@
 			else {
 				let entries = result.feed.entries;
 				let feeds = document.getElementById('feeds');
-				for (let i = 0; i < entries.length; i++) {
+				for (let i = 0; i < 10; i++) {
 					let entry = entries[i];
 					let div = document.createElement('div');
 					div.className = 'feed';
