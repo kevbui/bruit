@@ -28,7 +28,7 @@ function loadFeed() {
                 div.className = 'feed';
                 div.onclick = previewInMainPanel;
                 div.setAttribute("link", entries[i].link);
-                div.innerHTML = '<h1>' + entries[i].title;
+                div.innerHTML = '<h3>' + entries[i].title;
                 feeds.appendChild(div);
             }
         }
