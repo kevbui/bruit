@@ -15,7 +15,23 @@
 </head>
 
 <body>
-	<div class="menu"></div>
+	<div id="title-bar">
+		<button class="clean-gray" onclick="refreshFeed()">Refresh</button>
+		<button class="clean-gray" onclick="addNewFeed()">Add Feed</button>
+
+		<div id="add-dialog">
+			<input id="feed-input" type="url"><input type="submit" onclick="submitAddDialog()">
+		</div>
+
+		<div id="title-bar-btns">
+			<button id="min-btn">-</button>
+			<button id="max-btn">+</button>
+			<button id="close-btn">x</button>
+		</div>
+	</div>
+
+
+
 	<div class="container">
 		<div id="sidebar">
 			<div class="sidebar-feed"></div>
