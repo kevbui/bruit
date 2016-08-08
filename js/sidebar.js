@@ -7,7 +7,6 @@ function loadSidebar(urls) {
     let sidebar = document.getElementById('sidebar');
     for (var index = 0; index < urls.length; index++) {
         feednami.load(urls[index], (result) => {
-            console.log(result);
             if (result.error) {
                 console.log(result.error);
             }
@@ -41,3 +40,12 @@ function sortSidebar() {
         parent.appendChild(div);
     });
 }
+
+function addNewFeed() {
+    console.log("Hi");
+}
+
+function refreshFeed() {
+    console.log("RAWR");
+}
+

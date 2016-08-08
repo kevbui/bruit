@@ -22,7 +22,7 @@ function loadFeed() {
         else {
             let entries = result.feed.entries;
             let feeds = document.getElementById('feeds');
-            for (let i = 0; i < entries.length; i++) {
+            for (let i = 0; i < 10; i++) {
                 let entry = entries[i];
                 let div = document.createElement('div');
                 div.className = 'feed';
