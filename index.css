@@ -1,40 +1,19 @@
+.container, html, body {
+    height:100%;
+    margin:0;
+}
+
 html {
 	margin: 0px;
     padding: 0px;
-	height: 100%;
 	font-family: -apple-system, 'Helvetica Neue', Helvetica, sans-serif; 
 }
 
-body {
-	padding: 0px;
-	margin: 0px;
-	background-color: #2D2D30;
-	border: 1px solid #68217A;
-	border-bottom: 24px solid  #68217A;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
+.container {
+	display: flex;
+	flex-direction: column;
 }
 
-header {
-	position: absolute;
-	width: 500px;
-	height: 250px;
-	top: 50%;
-	left: 50%;
-	margin-top: -125px;
-	margin-left: -250px;
-	text-align: center;
-}
-
-header h1 {
-	font-size: 50px;
-	font-weight: 100;
-	margin: 0;
-	padding: 0;
-}
 
 button.clean-gray {
   background-color: #eeeeee;
@@ -82,22 +61,22 @@ button.clean-gray:active {
     margin: 3px 0;
 }
 
-.container {
-	height: 100%;
+#content {
+	flex: 2;
 	display: flex;
-	display: -webkit-flex;
 }
 
 #sidebar {
-    width: 150px;
+	flex: 0 0 150px;
     background-color:rgb(38, 50, 56);
 	color: white;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 #feeds {
-	width: 250px;
+	flex: 0 1 250px;
 	overflow: hidden;
-	background-color: yellow;
 }
 
 #feeds:hover {
@@ -108,11 +87,7 @@ button.clean-gray:active {
 	color: coral;
 }
 
-.feed {
-	
-}
 
 #preview {
-	flex: 1;
-	background-color: green;
+	flex: 1 2;
 }

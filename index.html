@@ -15,34 +15,32 @@
 </head>
 
 <body>
-	<div id="title-bar">
-		<button class="clean-gray" onclick="refreshFeed()">Refresh</button>
-		<button class="clean-gray" onclick="addNewFeed()">Add Feed</button>
-
-		<div id="add-dialog">
-			<input id="feed-input" type="url"><input type="submit" onclick="submitAddDialog()">
-		</div>
-
-		<div id="title-bar-btns">
-			<button id="min-btn">-</button>
-			<button id="max-btn">+</button>
-			<button id="close-btn">x</button>
-		</div>
-	</div>
-
-
-
 	<div class="container">
-		<div id="sidebar">
-			<div class="sidebar-feed"></div>
-		</div>
-		<div id="feeds">
-			<div class="feed"></div>
+		<div id="title-bar">
+			<button class="clean-gray" onclick="refreshFeed()">Refresh</button>
+			<button class="clean-gray" onclick="addNewFeed()">Add Feed</button>
+
+			<div id="add-dialog">
+				<input id="feed-input" type="url"><input type="submit" onclick="submitAddDialog()">
+			</div>
+
+			<div id="title-bar-btns">
+				<button id="min-btn">-</button>
+				<button id="max-btn">+</button>
+				<button id="close-btn">x</button>
+			</div>
 		</div>
 
-		<webview id="preview" src="about:blank" useragent="Mozilla/5.0 (Linux; Android 6.0.1; LG-D801 Build/MOB30R) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.91 Mobile Safari/537.36"></webview>
-		<section class="main"></section>
-		<footer></footer>
+		<div id="content">
+			<div id="sidebar">
+				<div class="sidebar-feed"></div>
+			</div>
+			<div id="feeds">
+				<div class="feed"></div>
+			</div>
+
+			<webview id="preview" src="about:blank" useragent="Mozilla/5.0 (Linux; Android 6.0.1; LG-D801 Build/MOB30R) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.91 Mobile Safari/537.36"></webview>
+		</div>
 	</div>
 
 	<script src="js/titlebar.js"></script>
