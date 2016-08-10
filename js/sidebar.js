@@ -1,3 +1,9 @@
+/* Copyright © 2016 Kevin Bui
+	 This code is available under the "MIT License"
+	 Please see the file LICENSE
+ 	 for more details
+*/
+
 function loadSidebar(urls) {
     let sidebar = document.getElementById('sidebar');
     for (var index = 0; index < urls.length; index++) {
