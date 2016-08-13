@@ -66,4 +66,17 @@ function submitAddDialog() {
   storage.set('savedFeeds', links, (error) => {
     if (error) throw error;
   });
+
+  document.getElementById('add-dialog').style.display = none;
+  
+}
+
+function showAddDialog(id) {
+  let div = document.getElementById('add-dialog');
+  if (div.style.display !== 'none') {
+    div.style.display = 'none';
+  }
+  else {
+    di
+  }
 }
