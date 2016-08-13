@@ -1,3 +1,9 @@
+/* 
+    Copyright © 2016 Kevin Bui
+	This code is available under the "MIT License"
+	Please see the file LICENSE for more details
+*/
+
 const electron = require('electron');
 const app = electron.app;
 const windowStateKeeper = require('electron-window-state');
